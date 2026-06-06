@@ -50,7 +50,19 @@ export default function ReadingPage() {
   return (
     <main className="min-h-screen bg-[#070412] text-white flex items-center justify-center px-6 py-10">
       <section className="max-w-3xl text-center">
+        <nav className="mb-12 flex justify-center gap-8 text-sm font-semibold text-purple-300">
+        <a href="/" className="hover:text-white transition">
+          Home
+        </a>
 
+        <a href="/about" className="hover:text-white transition">
+         About
+        </a>
+
+        <a href="/reading" className="hover:text-white transition">
+          Reading
+        </a>
+        </nav>
         <p className="uppercase tracking-[0.3em] text-purple-300 mb-4">
           Daily Symbolic Reading
         </p>

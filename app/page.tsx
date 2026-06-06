@@ -2,6 +2,19 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0b0714] text-white flex items-center justify-center px-6">
       <section className="max-w-5xl text-center">
+        <nav className="mb-12 flex justify-center gap-8 text-sm font-semibold text-purple-300">
+         <a href="/" className="hover:text-white transition">
+          Home
+         </a>
+
+         <a href="/about" className="hover:text-white transition">
+          About
+         </a>
+
+         <a href="/reading" className="hover:text-white transition">
+           Reading
+         </a>
+         </nav>
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-purple-300">
           Symbolic Intelligence + AI
         </p>
@@ -29,7 +42,14 @@ export default function Home() {
             Get Daily Reading
           </a>
         </div>
-
+        <div className="mb-12">
+          <a
+           href="/about"
+           className="text-purple-300 hover:text-white transition font-semibold"
+          >
+            Learn more about SoulAI
+          </a>
+        </div>
         <div className="grid md:grid-cols-3 gap-6 text-left">
           <div className="rounded-2xl bg-white/10 p-6">
             <h2 className="text-xl font-semibold mb-3">AI Tarot</h2>
