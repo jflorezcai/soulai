@@ -14,6 +14,9 @@ export default function Home() {
          <a href="/reading" className="hover:text-white transition">
            Reading
          </a>
+         <a href="/contact" className="hover:text-white transition">
+          Contact
+         </a>
          </nav>
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-purple-300">
           Symbolic Intelligence + AI

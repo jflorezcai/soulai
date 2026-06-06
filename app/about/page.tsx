@@ -14,6 +14,9 @@ export default function AboutPage() {
          <a href="/reading" className="hover:text-white transition">
           Reading
          </a>
+         <a href="/contact" className="hover:text-white transition">
+          Contact
+         </a>
         </nav>
         <a
           href="/"

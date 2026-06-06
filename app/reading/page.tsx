@@ -62,6 +62,9 @@ export default function ReadingPage() {
         <a href="/reading" className="hover:text-white transition">
           Reading
         </a>
+        <a href="/contact" className="hover:text-white transition">
+         Contact
+        </a>
         </nav>
         <p className="uppercase tracking-[0.3em] text-purple-300 mb-4">
           Daily Symbolic Reading
