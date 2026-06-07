@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function ReadingPage() {
   const [reading, setReading] = useState(
@@ -41,10 +42,30 @@ export default function ReadingPage() {
 
         <h1 className="text-5xl font-bold mb-8">SoulAI Reading</h1>
 
-        <div className="rounded-3xl bg-white/10 p-10 border border-white/10 shadow-2xl">
-          <p className="text-xl leading-relaxed text-gray-200 whitespace-pre-line">
-            {reading}
-          </p>
+        <div className="rounded-3xl bg-white/10 p-10 border border-white/10 shadow-2xl text-left">
+          <div className="prose prose-invert prose-lg max-w-none">
+           <ReactMarkdown
+            components={{
+            h1: ({ children }) => (
+            <h1 className="text-3xl font-bold text-center text-white mb-6">
+             {children}
+            </h1>
+             ),
+            h2: ({ children }) => (
+            <h2 className="text-xl font-semibold text-purple-300 mt-6 mb-3">
+             {children}
+           </h2>
+             ),
+           p: ({ children }) => (
+           <p className="text-gray-200 leading-relaxed mb-4">
+          {children}
+        </p>
+      ),
+    }}
+  >
+    {reading}
+  </ReactMarkdown>
+</div>
         </div>
 
         <p className="mt-6 text-sm text-gray-400 max-w-2xl mx-auto">

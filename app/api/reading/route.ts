@@ -9,7 +9,25 @@ export async function POST() {
     const response = await client.responses.create({
       model: "gpt-4o-mini",
      input:
-  "Create a short symbolic daily reading for SoulAI in clean plain text only. Do not use markdown, hashtags, asterisks, bullet points, or numbered lists. Use exactly this format:\n\nTitle: [symbolic title]\n\nReflection: [short reflective message]\n\nPractical Action: [one simple action for today]\n\nDo not claim to predict the future.",
+      `Create a symbolic daily reading for SoulAI.
+
+Return ONLY valid markdown.
+
+Format exactly as:
+
+# [Title]
+
+## Reflection
+
+2 short paragraphs.
+
+## Practical Action
+
+1 practical action for today.
+
+Do not predict the future.
+Do not use fortune telling.
+Keep the tone inspirational and reflective.`
     });
 
     return Response.json({
