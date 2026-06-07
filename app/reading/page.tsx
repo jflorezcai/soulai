@@ -33,6 +33,9 @@ export default function ReadingPage() {
           <a href="/" className="hover:text-white transition">Home</a>
           <a href="/about" className="hover:text-white transition">About</a>
           <a href="/reading" className="hover:text-white transition">Reading</a>
+          <a href="/premium" className="hover:text-white transition">
+           Premium
+          </a>
           <a href="/contact" className="hover:text-white transition">Contact</a>
         </nav>
 
