@@ -21,12 +21,7 @@ export default function AboutPage() {
           Contact
          </a>
         </nav>
-        <a
-          href="/"
-          className="inline-block mb-10 text-purple-300 hover:text-white transition"
-        >
-          ← Back Home
-        </a>
+        
 
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-purple-300">
           About SoulAI
