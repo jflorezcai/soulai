@@ -165,9 +165,12 @@ export default function Home() {
         <li>✓ Early Access Features</li>
       </ul>
 
-      <button className="mt-8 w-full rounded-full bg-purple-500 py-3 font-semibold hover:bg-purple-400 transition">
+      <a
+       href="/premium"
+       className="mt-8 block w-full rounded-full bg-purple-500 py-3 font-semibold hover:bg-purple-400 transition"
+       >
         Upgrade to Premium
-      </button>
+      </a>
     </div>
 
       </div>

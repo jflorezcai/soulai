@@ -1,4 +1,18 @@
+"use client";
 export default function PremiumPage() {
+    async function handleCheckout() {
+  const response = await fetch("/api/create-checkout-session", {
+    method: "POST",
+  });
+
+  const data = await response.json();
+
+  if (data.url) {
+    window.location.href = data.url;
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+  }
   return (
     <main className="min-h-screen bg-[#070412] text-white px-6 py-16">
       <section className="max-w-4xl mx-auto text-center">
@@ -30,8 +44,11 @@ export default function PremiumPage() {
             <p>✓ Early access to future SoulAI tools</p>
           </div>
 
-          <button className="rounded-full bg-purple-500 px-8 py-4 font-semibold hover:bg-purple-400 transition">
-            Coming Soon
+          <button
+            onClick={handleCheckout}
+            className="rounded-full bg-purple-500 px-8 py-4 font-semibold hover:bg-purple-400 transition"
+           >
+            Upgrade Now
           </button>
         </div>
 

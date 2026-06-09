@@ -1,36 +1,65 @@
 import OpenAI from "openai";
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
+    const body = await request.json();
+
+    const selectedCards = body.cards || [
+      "El Faro",
+      "La Luna",
+      "La Llave",
+    ];
+
     const client = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
-  
+
     const response = await client.responses.create({
       model: "gpt-4o-mini",
-     input:
-      `Create a symbolic daily reading for SoulAI.
+      input: `
+Crea una lectura simbólica diaria para SoulAI usando estas 3 cartas seleccionadas por el usuario:
 
-Return ONLY valid markdown.
+Carta 1 - Energía presente: ${selectedCards[0]}
+Carta 2 - Aspecto a observar: ${selectedCards[1]}
+Carta 3 - Próximo paso: ${selectedCards[2]}
 
-Format exactly as:
+Devuelve SOLO markdown válido.
 
-# [Title]
+Formato exacto:
 
-## Reflection
+# Lectura de tres cartas
 
-2 short paragraphs.
+## Energía presente: ${selectedCards[0]}
 
-## Practical Action
+Explica esta carta en 1 párrafo corto.
 
-1 practical action for today.
+## Aspecto a observar: ${selectedCards[1]}
 
-Do not predict the future.
-Do not use fortune telling.
-Keep the tone inspirational and reflective.`
+Explica esta carta en 1 párrafo corto.
+
+## Próximo paso: ${selectedCards[2]}
+
+Explica esta carta en 1 párrafo corto.
+
+## Reflexión integrada
+
+Escribe 2 párrafos cortos conectando las tres cartas en una narrativa simbólica coherente.
+
+## Acción práctica
+
+Escribe 1 acción práctica para hoy.
+
+Reglas importantes:
+No predigas el futuro.
+No uses adivinación.
+No afirmes tener poderes sobrenaturales.
+No des consejos médicos, legales ni financieros.
+El tono debe ser inspirador, reflexivo, ético y práctico.
+      `,
     });
 
     return Response.json({
+      cards: selectedCards,
       reading: response.output_text,
     });
   } catch (error: any) {
